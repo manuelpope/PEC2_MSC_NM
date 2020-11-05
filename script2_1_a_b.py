@@ -11,7 +11,7 @@ y = np.array([0.00010 ,0.00024, 0.00077,  0.00389, 0.05882 ,1.000000, 0.05882, 0
              0.00024, 0.00010])
 poly = lagrange(x, y)
 #print(numpy.polynomial.Polynomial(poly).coef)
-
+print("lagrange")
 print ("-0.95  |",round(poly(-0.95),5))
 print (" 0.11  |",round(poly(0.11),5))
 print (" 0.76  |",round(poly(0.76),5))
@@ -20,6 +20,7 @@ tck = interpolate.splrep(x, y,k=3,s=0)
 sol= np.array(interpolate.splev(np.array([-0.95,0.11,0.76]), tck))
 sol= [round(item,5) for item in sol]
 #print(numpy.polynomial.Polynomial(tck[1]).coef)
+print("splines")
 print(sol)
 
 # se puede observar que para mayor numero de puntos podemos tener una
@@ -53,7 +54,7 @@ print(value)
 
 
 # evenly sampled time at 200ms intervals
-t = np.arange(-1, 1, 0.2)
+t = np.arange(-1, 1, 0.1)
 listfo= [functionOriginal(item) for item in t]
 listp10= [p10_r(item) for item in t]
 list_pl= interpolate.splev(np.array(t), tck)
@@ -70,7 +71,7 @@ plt.plot(t, listfo ,'r--',label='original')
 plt.plot(t, listp10, 'k',color='blue',label='p10')
 plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc='lower left',
            ncol=2, mode="expand", borderaxespad=0.)
-#plt.show()
+plt.show()
 
 
 

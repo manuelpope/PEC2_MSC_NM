@@ -14,5 +14,6 @@ list_yi=[]
 for n in I:
     h_i= 4**(-n)
     yi=fp_0=fprimax(0,h_i)
-    print("valor para n = : "+ str(n)+" | "  +str(yi))
+    #print("valor para n = : "+ str(n)+" | "  +str(yi))
+    print(str(yi))
     list_yi.append(yi)

@@ -10,7 +10,10 @@ def functionOriginal(num:float):
     return (1/(1+(10*num)**4))
 
 t21 = np.arange(-1, 1, 0.1)
+#print(t21)
 y21= [functionOriginal(item) for item in t21]
+#for elem in y21:
+   # print(str(round(elem,5)))
 
 #Todo calculate values of splines
 
@@ -28,7 +31,7 @@ print(value)
 list_fo21=[functionOriginal(xi) for xi in [-0.95,0.11,0.76] ]
 print('solucion para original en valores [-0.95,0.11,0.76]:: ')
 
-print(np.round(list_fo21,5))
+print(str(np.round(list_fo21,5)))
 
 # observamos que los polinomios interpolantes estan mas cerca , pero aun asi por la naturaleza del polinomio de la grange
 # hya ciertas partes que tienen a desviarse abruptamente cuando llega a los extremos.
